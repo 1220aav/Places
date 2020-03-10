@@ -10,7 +10,7 @@ import UIKit
 
 class MainViewController: UITableViewController {
     
-    let places = ["Burger Heroes", "Kitchen", "Bonsai", "Дастархан", "Индокитай", "X.O", "Балкан Гриль", "Sherlock Holmes", "Speak Easy", "Morris Pub", "Вкусные истории", "Классик", "Love&Life", "Шок", "Бочка"]
+    let places = Place.getPlaces()  
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,18 +26,14 @@ class MainViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
-        cell.placeNameLabel.text = places[indexPath.row]
-        cell.placeImage.image = UIImage(named: places[indexPath.row])
+        cell.placeNameLabel.text = places[indexPath.row].name
+        cell.placeLocationLabel.text = places[indexPath.row].location
+        cell.placeTypeLabel.text = places[indexPath.row].type
+        cell.placeImage.image = UIImage(named: places[indexPath.row].image)
         cell.placeImage.layer.cornerRadius = cell.placeImage.frame.size.height / 2
         cell.placeImage.clipsToBounds = true
 
         return cell
-    }
-    
-    // MARK: - Table View Delegate
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
     }
 
     /*
