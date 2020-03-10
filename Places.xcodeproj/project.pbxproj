@@ -44,7 +44,6 @@
 		B20C307624181C9900557E5E = {
 			isa = PBXGroup;
 			children = (
-				B20C309A241831D800557E5E /* CustomTableViewCell.swift */,
 				B20C308124181C9A00557E5E /* Places */,
 				B20C308024181C9A00557E5E /* Products */,
 			);
@@ -64,6 +63,7 @@
 				B20C308224181C9A00557E5E /* AppDelegate.swift */,
 				B20C308424181C9A00557E5E /* SceneDelegate.swift */,
 				B20C30982418202A00557E5E /* MainViewController.swift */,
+				B20C309A241831D800557E5E /* CustomTableViewCell.swift */,
 				B20C309C2418571F00557E5E /* PlaceModel.swift */,
 				B20C308824181C9A00557E5E /* Main.storyboard */,
 				B20C308B24181C9B00557E5E /* Assets.xcassets */,
