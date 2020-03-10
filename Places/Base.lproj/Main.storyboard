@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main screen-->
+        <!--My Places-->
         <scene sceneID="MNw-83-Nug">
             <objects>
                 <tableViewController id="TFS-4j-yhU" customClass="MainViewController" customModule="Places" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,7 +29,7 @@
                             <outlet property="delegate" destination="TFS-4j-yhU" id="iRA-3D-ofi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Main screen" id="Pca-OZ-XVT"/>
+                    <navigationItem key="navigationItem" title="My Places" id="Pca-OZ-XVT"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDy-xg-toQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
