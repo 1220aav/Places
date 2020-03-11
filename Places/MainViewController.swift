@@ -10,7 +10,7 @@ import UIKit
 
 class MainViewController: UITableViewController {
     
-    let places = Place.getPlaces()  
+    let places = Place.getPlaces()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,4 +46,5 @@ class MainViewController: UITableViewController {
     }
     */
 
+    @IBAction func cancelAction(_ segue: UIStoryboardSegue) {}
 }
