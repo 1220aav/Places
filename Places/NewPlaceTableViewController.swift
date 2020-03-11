@@ -10,6 +10,9 @@ import UIKit
 
 class NewPlaceTableViewController: UITableViewController {
     
+    var newPlace: Place?
+    var isImageChanged = false
+    
     // MARK: - Outlets
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -20,6 +23,9 @@ class NewPlaceTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        
+        saveButton.isEnabled = false
+        setNameField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     }
     
     // MARK: - TableView Delegate
@@ -54,7 +60,19 @@ class NewPlaceTableViewController: UITableViewController {
             view.endEditing(true)
         }
     }
-
+    
+    func saveNewPlace() {
+        
+        var image: UIImage?
+        
+        if isImageChanged {
+            image = placeImage.image
+        } else {
+            image = #imageLiteral(resourceName: "imagePlaceholder")
+        }
+        
+        newPlace = Place(name: setNameField.text!, location: setLocationField.text, type: setTypeField.text, image: image, restaurantImage: nil)
+    }
 }
 
 // MARK: - UITextField Delegate
@@ -63,6 +81,14 @@ extension NewPlaceTableViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    @objc private func textFieldChanged() {
+        if setNameField.text?.isEmpty == false {
+            saveButton.isEnabled = true
+        } else {
+            saveButton.isEnabled = false
+        }
     }
 }
 
@@ -84,6 +110,9 @@ extension NewPlaceTableViewController: UIImagePickerControllerDelegate, UINaviga
         placeImage.image = info[.editedImage] as? UIImage
         placeImage.contentMode = .scaleAspectFill
         placeImage.clipsToBounds = true
+        
+        isImageChanged = true
+        
         dismiss(animated: true)
     }
 }
