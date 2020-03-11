@@ -107,7 +107,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="nkH-xY-ih9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250.00000000000006"/>
                                                     <color key="backgroundColor" red="0.43812721970000001" green="0.82934409379999996" blue="0.70979261400000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </imageView>
                                             </subviews>
@@ -250,7 +250,11 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="kUg-1O-w7h"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageOfPlace" destination="nkH-xY-ih9" id="lQd-g7-elR"/>
+                        <outlet property="placeImage" destination="nkH-xY-ih9" id="lQd-g7-elR"/>
+                        <outlet property="saveButton" destination="kUg-1O-w7h" id="DEj-SJ-5pK"/>
+                        <outlet property="setLocationField" destination="Aq7-7l-nsZ" id="YI5-bw-oMn"/>
+                        <outlet property="setNameField" destination="kfH-CF-D7r" id="hTr-hO-iJx"/>
+                        <outlet property="setTypeField" destination="ugO-cN-r4M" id="OM8-pm-96E"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bpX-yA-WX2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

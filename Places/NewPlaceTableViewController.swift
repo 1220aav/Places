@@ -9,7 +9,13 @@
 import UIKit
 
 class NewPlaceTableViewController: UITableViewController {
-    @IBOutlet weak var imageOfPlace: UIImageView!
+    
+    // MARK: - Outlets
+    @IBOutlet weak var placeImage: UIImageView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var setNameField: UITextField!
+    @IBOutlet weak var setLocationField: UITextField!
+    @IBOutlet weak var setTypeField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,9 +81,9 @@ extension NewPlaceTableViewController: UIImagePickerControllerDelegate, UINaviga
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        imageOfPlace.image = info[.editedImage] as? UIImage
-        imageOfPlace.contentMode = .scaleAspectFill
-        imageOfPlace.clipsToBounds = true
+        placeImage.image = info[.editedImage] as? UIImage
+        placeImage.contentMode = .scaleAspectFill
+        placeImage.clipsToBounds = true
         dismiss(animated: true)
     }
 }
