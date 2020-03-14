@@ -9,8 +9,6 @@
 import UIKit
 
 class NewPlaceTableViewController: UITableViewController {
-    
-    var newPlace = Place()
     var isImageChanged = false
     
     // MARK: - Outlets
@@ -62,7 +60,6 @@ class NewPlaceTableViewController: UITableViewController {
     }
     
     func saveNewPlace() {
-        
         var image: UIImage?
         
         if isImageChanged {
@@ -71,7 +68,11 @@ class NewPlaceTableViewController: UITableViewController {
             image = #imageLiteral(resourceName: "imagePlaceholder")
         }
         
-//        newPlace = Place(name: setNameField.text!, location: setLocationField.text, type: setTypeField.text, image: image, restaurantImage: nil)
+        let imageData = image?.pngData()
+        
+        let newPlace = Place(name: setNameField.text!, location: setLocationField.text, type: setTypeField.text, imageData: imageData!)
+        
+        StorageManager.saveObject(newPlace)
     }
 }
 
